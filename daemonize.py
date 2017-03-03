@@ -103,7 +103,7 @@ class Daemonize(object):
             try:
                 process_id = os.fork()
             except OSError as e:
-                self.logger.error("Unable to fork, errno: {0}".format(e.errno))
+                print("Unable to fork, errno: {0}".format(e.errno))
                 sys.exit(1)
             if process_id != 0:
                 # This is the parent process. Exit without cleanup,
